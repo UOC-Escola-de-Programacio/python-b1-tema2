@@ -67,8 +67,37 @@ Exemple:
 
 
 def calculate_max_and_min(list_numbers):
-    # Write here your code
-    pass
+    max=0
+    min=0
+    print(f"Initial values are: max: {max} min: {min}")
+
+    if len(list_numbers) == 0:
+        raise ValueError
+
+    for elem in list_numbers:
+        if isinstance(elem, str):
+            raise TypeError
+
+        if elem > max:
+            max = elem
+            print(f"New value for max is: {max}")
+        if elem < min:
+            min = elem
+            print(f"New value for min is: {min}")
+    
+    return (min, max)
+    #return "Greater: " + str(max) + "\n" + "Lesser: " + str(min)
+
+print(
+    calculate_max_and_min([10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55])
+)
+#print(
+#    calculate_max_and_min([1, 5, -20, 55.5, 'Hello'])
+#)
+#print(
+#    "\nResult: \n", calculate_max_and_min([10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55])
+#)
+
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script

@@ -4,7 +4,7 @@ Utilizando las buenas prácticas de programación de Python PEP8, implementa una
 función 'sum_list_numbers', el parámetro debe ser nombrado correctamente, el
 mismo debe recibir una lista.
 
-Las buenas prácticas de programación de Python PEP8 las puedes encontrar en 
+Las buenas prácticas de programación de Python PEP8 las puedes encontrar en
 el siguiente enlace:
 https://peps.python.org/pep-0008/
 
@@ -49,11 +49,26 @@ Exemple:
 """
 
 
-def sum_list_numbers(
-    list_numbers):
-    # Write here your code
-    pass
+"""
+Funció que retorna la suma total dels elements passats com paràmetre
+d'entrada.
 
+Paràmetres:
+- list_numbers: llista amb els números a sumar
+
+Retorna:
+- total: total calculat a partir de la llista d'entrada
+"""
+
+
+# https://peps.python.org/pep-0008/
+
+
+def sum_list_numbers(list_numbers):
+    total = 0
+    for elem in list_numbers:
+        total = total + elem
+    return total
 
 # Si quieres probar tu código, descomenta las siguientes líneas y
 # ejecuta el script

@@ -66,14 +66,31 @@ Sortida:
 
 
 def tax_calculation_group_1(value: int):
-    # Write here your code
-    pass
-
+    # 'tax_percent' * 'value')/100
+    tax_percent=19
+    total=(value * tax_percent)/100
+    # si el resultat conté decimals, retornem el valor amb decimals
+    # sino retornem el valor sense decimals
+    if total.is_integer():
+        return int(total)
+    else:
+        return round(total, 1)
 
 def tax_calculation_global(value: int):
-    # Write here your code
-    pass
+    # 'tax_percent' * 'value')/100
+    tax_percent=24
+    total=(value * tax_percent)/100
+    # si el resultat conté decimals, retornem el valor amb decimals
+    # sino retornem el valor sense decimals
+    if total.is_integer():
+        return int(total)
+    else:
+        return round(total, 1)
 
+#print(f"The taxes for group global: {tax_calculation_global(500)}")
+#print(f"The taxes for group global: {tax_calculation_global(1250)}")
+#print(f"The taxes for group 1: {tax_calculation_group_1(500)}")
+#print(f"The taxes for group 1: {tax_calculation_group_1(1250)}")
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script

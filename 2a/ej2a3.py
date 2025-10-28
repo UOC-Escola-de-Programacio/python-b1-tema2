@@ -90,24 +90,33 @@ Exemple:
 
 
 def add_student_by_value(list_students, new_student):
-    # Write here your code
-    pass
-
+    temp_list=list_students.copy()
+    temp_list.append(new_student)
+    return temp_list
 
 def add_student_by_reference(list_students, new_student):
-    # Write here your code
-    pass
+    list_students.append(new_student)
+    return list_students
 
 
 def main(list_students, new_student_by_value, new_student_by_reference):
-    # Write here your code
-    pass
+#    print("llista abans de cridar a la funcio d'afegir per valor: ", list_students)
+    temporal_list = add_student_by_value(list_students, new_student_by_value)    
+#    print("llista després de cridar a la funcio d'afegir per valor: ", temporal_list)
 
+    #add_student_by_reference(list_students, new_student_by_reference)
+#    print("llista abans de cridar a la funcio d'afegir per referencia: ", temporal_list)
+    #add_student_by_reference(temporal_list, new_student_by_reference)
+    add_student_by_reference(list_students, new_student_by_reference)
+#    print("llista despres de cridar a la funcio d'afegir per referencia: ", temporal_list)
+
+    #return temporal_list
+    return list_students
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# list_students = ["Alice", "Bob", "Juan"]
-# new_student_by_value = "Maria"
-# new_student_by_reference = "Sofia"
+list_students = ["Alice", "Bob", "Juan"]
+new_student_by_value = "Maria"
+new_student_by_reference = "Sofia"
 
-# main(list_students, new_student_by_value, new_student_by_reference)
+main(list_students, new_student_by_value, new_student_by_reference)

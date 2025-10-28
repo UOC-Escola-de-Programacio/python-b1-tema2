@@ -60,11 +60,31 @@ L'any a comprovar serà '2000', de manera que:
 """
 
 
-def check_leap_year(
-    year):
-    # Write here your code
-    pass
+"""
+Function to test if a year passed as input parameter is leap year or not
+Parameters:
+- year: input parameter containin the year
 
+Returns
+- result: True or False depending if input parameter is leap year or not
+"""
+
+
+def check_leap_year(year):
+    result = False
+
+    # year could be leap if condition is true
+    if year % 4 == 0:
+        if year % 100 != 0:
+            # we have a leap year if thsi is true also
+            # so return true
+            result = True
+        else:
+            if year % 400 == 0:
+                # we have a leap year if thsi is true also
+                # so return true
+                result = True
+    return result
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el
 # script

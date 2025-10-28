@@ -47,12 +47,46 @@ Exemple:
      - En el tercer cas el resultat és: An unexpected has occurred: int() argument
      must be a string, a bytes-like object or a number, not 'list'
 """
+"""
+Funciton to covert from a string to an integer value.
 
+Parameters:
+- string: string containing the "number" to be converted
+
+Returns
+- The converted number if everything is ok
+- "The string cannot be converted to an integer" if input stringn can't be
+  converted
+- "An unexpected error has occurred:" if there's any other error type
+"""
+
+# constant definitions, in case text error should be changed
+
+ERROR_1="The string cannot be converted to an integer"
+ERROR_2="An unexpected error has occurred: int() argument"
 
 def convert_to_integer(string):
-    # Write here your code
-    pass
+    # value to be returned
+    result=0
 
+    try:
+        result = int(string)
+        return result
+    except ValueError as ve:
+        return ERROR_1
+    except Exception as err:
+        return ERROR_2
+
+
+print(convert_to_integer("123"))
+print(convert_to_integer("foo"))
+print(convert_to_integer(["3.14"]))
+
+print(convert_to_integer("10"))
+print(convert_to_integer("-10"))
+print(convert_to_integer("10.5"))
+print(convert_to_integer("abc"))
+print(convert_to_integer(["3.14"]))
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
