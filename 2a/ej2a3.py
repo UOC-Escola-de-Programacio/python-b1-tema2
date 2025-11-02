@@ -90,24 +90,43 @@ Exemple:
 
 
 def add_student_by_value(list_students, new_student):
-    # Write here your code
-    pass
+
+    
+    list_update_student = list_students.copy()
+
+    list_update_student.append(new_student)
+
+    return list_update_student
 
 
 def add_student_by_reference(list_students, new_student):
-    # Write here your code
-    pass
+    
+    list_students.append(new_student)
+
+    return list_students
 
 
 def main(list_students, new_student_by_value, new_student_by_reference):
-    # Write here your code
-    pass
+    
+    print("Lista estudiantes por VALOR",add_student_by_value(list_students,new_student_by_value))
+
+    print("Lista estudiantes por REFERENCIA",add_student_by_reference(list_students,new_student_by_reference))
+
+    return list_students
+
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# list_students = ["Alice", "Bob", "Juan"]
-# new_student_by_value = "Maria"
-# new_student_by_reference = "Sofia"
+#list_students = ["Alice", "Bob", "Juan"]
+#new_student_by_value = "Maria"
+#new_student_by_reference = "Sofia"
 
-# main(list_students, new_student_by_value, new_student_by_reference)
+
+#print(add_student_by_value(list_students,new_student_by_value))
+#print(list_students)
+
+
+
+#main(list_students, new_student_by_value, new_student_by_reference)
+#print("listado",list_students)

@@ -45,3 +45,4 @@ def test_main():
         "Sofia",
         "Carlos",
     ], "main does not return the correct value for input ['Alice', 'Bob', 'Juan'], 'Maria', 'Carlos'. It should be ['Alice', 'Bob', 'Juan', 'Sofia', 'Victor', 'Sofia', 'Carlos']"
+ 

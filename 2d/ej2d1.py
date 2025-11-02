@@ -48,11 +48,15 @@ Exemple:
 """
 
 
-def kg_to_lb(kg):
-    # Write here your code
-    pass
+def kg_to_lb(kg: int | float):
+    if kg <= 0:
+        raise ValueError("El valor KG debe ser superior a 0")  
+    try:
+        return round((kg * 2.20462),2)
+    except TypeError:
+        raise TypeError("El dato 'KG' debe ser int o float")
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-#print(kg_to_lb(50))
+# print(kg_to_lb(1))

@@ -51,18 +51,53 @@ Exemple:
 
 
 def sum_even_numbers_in_list_while(list_numbers):
-    # Write here your code
-    pass
+    
+    count=0
+    sum=0
+
+    while count < len(list_numbers):
+
+        if (list_numbers[count]%2) == 0:
+            sum += list_numbers[count]
+
+        count+=1
+
+    return sum
 
 
 def sum_even_numbers_in_list_for(list_numbers):
-    # Write here your code
-    pass
+    
+    sum=0
+
+    for i in list_numbers:
+
+        if i%2==0:
+            sum+=i
+
+
+    return sum
 
 
 def sum_even_numbers_in_list_do_while(list_numbers):
-    # Write here your code
-    pass
+    
+    sum=0
+    count=0
+
+    while True:
+
+        if count<len(list_numbers):
+
+            if list_numbers[count] %2 == 0:
+
+               sum+=list_numbers[count]
+
+        else:
+            break
+
+        print(count)
+        count +=1
+
+    return sum
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script

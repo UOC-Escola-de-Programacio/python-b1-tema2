@@ -66,10 +66,27 @@ Exemple:
 """
 
 
-def calculate_max_and_min(list_numbers):
-    # Write here your code
-    pass
-
+def calculate_max_and_min(list_numbers:list):
+    max = list_numbers[0]
+    min = list_numbers[0]
+    if not list_numbers:
+        raise ValueError("La lista está vacía")
+    
+    print("MAX:",max)
+    print("MIN:",min)
+    for item in list_numbers:
+        if not isinstance(item,(int,float)):
+            raise TypeError("Item diferente a int o float") 
+        if item != min and item < min:
+            min = item
+            print("MIN:",min)
+        if item != max and item > max:
+            max = item
+            print("MAX",max)    
+    print("Greater:",max)  
+    print("Lesser:",min)
+    return min,max     
+    
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
@@ -77,3 +94,4 @@ def calculate_max_and_min(list_numbers):
 # print(
 #     "\nResult: ", calculate_max_and_min([10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55])
 # )
+calculate_max_and_min([10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55])
