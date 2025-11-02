@@ -46,11 +46,58 @@ Exemple:
 
 """
 
+"""
+Generic function to check if an input parameter is greater than 0
+If not, raise a ValueError exception
 
-def triangle_area_calculate(
-    base, height):
-    # Write here your code
-    pass
+Parameters:
+- param: numeric value to be tested
+- name_param: name of parameter being tested, to be shown in case of error
+
+Returns
+- Nothing if parameter is greater than 0
+- Value Error exception if parameter condition is not satisfied
+"""
+
+
+def checkInputParameters(param, name_param):
+    if param <= 0:
+        raise ValueError(name_param + " should be greater than 0")
+
+
+"""
+Function to calculate the area of a triangle using the following formula:
+area=(base*height) / 2
+Parameters:
+- base: base of the triangle
+- height: height of the triangle
+
+Returns
+- result: calculated triangle area
+"""
+
+
+def triangle_area_calculate(base, height):
+    # contains the calculated area
+    area = 0
+
+    # check input parameters
+    checkInputParameters(base, "base")
+    checkInputParameters(height, "height")
+
+    # apply formula
+    area = (base * height) / 2
+
+    # delete .0 from the result. For other decimals we do nothing
+    # some string stuff to delete .0
+    string_decimals = str(area)[-2:]
+    if string_decimals == ".0":
+        temp_area = int(str(area)[0:len(str(area))-2])
+        # return value without ".0"
+        return temp_area
+
+    # return calculated area
+    return area
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta
@@ -59,4 +106,4 @@ def triangle_area_calculate(
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'scrip
 
-# print(triangle_area_calculate(33, 45))
+print(triangle_area_calculate(33, 45))

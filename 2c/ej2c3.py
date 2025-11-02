@@ -65,18 +65,44 @@ Exemple:
      negative number cannot be calculated"
 """
 
+# constants definitions for messages
+ERR_NEGATIVE_NUMBER="Factorial of a negative number cannot be calculated."
+ERR_GENERIC="An unexpected error has occurred: "
 
 def factorial(number: int):
     if number < 0:
-        raise ValueError("Factorial of a negative number cannot be calculated.")
+        raise ValueError(ERR_NEGATIVE_NUMBER)
     if number == 0:
         return 1
     return number * factorial(number - 1)
 
 
 def calculate_factorial(number: int):
-    # Write here your code
-    pass
+    try:
+        # call to create factorial
+        #print("Factorial calculated: ", factorial(number))
+        return factorial(number)
+    except ValueError as ve:
+        # get the message of exception from args, first position
+        #print(ERR_GENERIC + ve.args[0])
+        return ERR_GENERIC + ve.args[0]
+    except Exception as err:
+        # any other error occured
+        #print(ERR_GENERIC + err.args[0])
+        return ERR_GENERIC + err.args[0]
+    
+
+calculate_factorial(-10)
+#calculate_factorial(0)
+#calculate_factorial(-5)
+#calculate_factorial(-1)
+#calculate_factorial(8)
+#calculate_factorial(-10)
+#calculate_factorial(None)
+#calculate_factorial(-10)
+#calculate_factorial([])
+#calculate_factorial("")
+
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script

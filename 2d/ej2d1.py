@@ -47,11 +47,37 @@ Exemple:
 
 """
 
+'''
+base formula to convert used: lb = kg * 2.20462
+Result is rounded to 2 decimal places
+'''
+LB_VALUE=2.20462
+ERR_NEGATIVE_NUMBER="Kilograms can not be a negative value."
 
 def kg_to_lb(kg):
-    # Write here your code
-    pass
+    lb=0
 
+    # check numeric type
+    if isinstance(kg, int) or isinstance(kg, float):
+        if kg < 0:
+            raise ValueError(ERR_NEGATIVE_NUMBER)
+        else:
+            lb = kg * LB_VALUE
+    else:
+        raise TypeError
+
+    # round result to 2 decimal places including zeroes
+    return round(lb, 2)
+    #return "{:.2f}".format(lb)
+
+
+print(kg_to_lb(50))
+#print(kg_to_lb(50.5))
+#print(kg_to_lb(1))
+#print(kg_to_lb(-1))
+#print(kg_to_lb("abc"))
+#print(kg_to_lb(None))
+#print(kg_to_lb([]))
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script

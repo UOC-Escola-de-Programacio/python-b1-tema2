@@ -54,11 +54,32 @@ Exemple:
 """
 
 
+"""
+Funciton to get an element from an input list
+
+Parameters:
+- items_list: list with all items
+- index: index of item to be searched
+
+Returns
+- Item found from the list
+- The specified index is out of the items_list's range
+- "An unexpected error has occurred: {error}" if there's any other error type
+"""
+
+ERROR_INDEX_OUT_OF_BOUNDS="The specified index is out of the items_list's range"
+GENERIC_ERROR="An unexpected error has occurred: "
+
 def get_element_from_list(items_list, index) -> str:
-    # Write here your code
-    pass
+    try:
+        return items_list[index]
+    except IndexError as ie:
+        return ERROR_INDEX_OUT_OF_BOUNDS
+    except Exception as error:
+        error=error.args[0]
+        return GENERIC_ERROR + "{" + error + "}"
 
-
+print(get_element_from_list([1, 2, 3], 3))
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 

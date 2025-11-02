@@ -50,19 +50,60 @@ Exemple:
 """
 
 
-def sum_even_numbers_in_list_while(list_numbers):
-    # Write here your code
-    pass
+def sum_even_numbers_in_list_while(shopping_list):
+    total=0
+    index_list=0
+    
+    # 0 index base, cal comptar la longitud menys 1, que 
+    # són el número d'elements de la llista
+    while index_list <= len(shopping_list)-1:
+        # valor parell
+        if shopping_list[index_list] % 2 == 0:
+            # acumulem
+            total=total+shopping_list[index_list]
+        index_list +=1
+    return total
 
 
-def sum_even_numbers_in_list_for(list_numbers):
-    # Write here your code
-    pass
+def sum_even_numbers_in_list_for(shopping_list):
+    total=0
+    for elem in shopping_list:
+        # valor parell
+        if elem % 2 == 0:
+            # acumulem
+            total=total+elem
+    return total
 
 
-def sum_even_numbers_in_list_do_while(list_numbers):
-    # Write here your code
-    pass
+def sum_even_numbers_in_list_do_while(shopping_list):
+    total=0
+    index_list=0
+    
+    # 0 index base, cal comptar la longitud menys 1, que 
+    # són el número d'elements de la llista
+#    while index_list <= len(shopping_list)-1:
+    while True:
+        # valor parell
+        if shopping_list[index_list] % 2 == 0:
+            # acumulem
+            total=total+shopping_list[index_list]
+        if index_list < len(shopping_list)-1:
+            index_list +=1
+        else:
+            break
+
+    return total
+
+
+print(sum_even_numbers_in_list_while([1, 2, 3, 4, 5, 6]))
+print(sum_even_numbers_in_list_while([1, 3, 5.0, 7, 9, 10.0]))
+print(sum_even_numbers_in_list_while([]))
+print(sum_even_numbers_in_list_for([2, 4, 6, 8, 10]))
+print(sum_even_numbers_in_list_for([3, 4, 11, 8, 10]))
+print(sum_even_numbers_in_list_for([1.0, 4, 6, -3, 10]))
+print(sum_even_numbers_in_list_do_while([-2, 0, 2]))
+print(sum_even_numbers_in_list_do_while([6.0, 0, -2]))
+print(sum_even_numbers_in_list_do_while([1, 0, 8, 3, 10]))
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
