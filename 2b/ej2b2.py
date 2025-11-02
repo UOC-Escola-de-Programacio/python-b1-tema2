@@ -60,12 +60,16 @@ L'any a comprovar serà '2000', de manera que:
 """
 
 
-def check_leap_year(
-    year):
-    # Write here your code
-    pass
-
-
+def check_leap_year(year: int):
+    try:
+        if (year % 4 == 0 and year % 100 != 0) or (
+            year % 400 == 0 and year % 100 == 0 and year % 400 == 0
+        ):
+            return True
+        else:
+            return False
+    except TypeError:
+        raise ValueError("Year debe ser un número entero")
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el
 # script
 

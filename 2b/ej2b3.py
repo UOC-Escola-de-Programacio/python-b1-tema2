@@ -47,16 +47,18 @@ Exemple:
 """
 
 
-def triangle_area_calculate(
-    base, height):
-    # Write here your code
-    pass
-
+def triangle_area_calculate(base: float, height: float):
+    try:
+        if base <= 0:
+            raise ValueError("La base debe ser superior a 0")
+        if height <= 0:
+            raise ValueError("El height debe ser superior a 0")
+        return (base*height)/2
+    except TypeError:
+        raise TypeError("El tipo de dato debe ser int o float")
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta
 # el script
-
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'scrip
-
 # print(triangle_area_calculate(33, 45))
