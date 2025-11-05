@@ -67,7 +67,23 @@ Exemple:
 
 
 def calculate_max_and_min(list_numbers):
-    # Write here your code
+    try:
+        max = 0
+        for numero in list_numbers:
+            if max < numero:
+                max = numero
+
+        min = 0
+        for numero in list_numbers:
+            if min > numero:
+                min = numero
+        return f"Mayor : {max}\nMenor: {min}"
+
+    except TypeError:
+        raise TypeError("La llista ha de ser tota de numeros")
+    except ValueError:
+        raise ValueError("La llista no pot estar buida")
+
     pass
 
 
