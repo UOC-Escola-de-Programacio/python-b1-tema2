@@ -67,8 +67,19 @@ Exemple:
 
 
 def calculate_max_and_min(list_numbers):
-    # Write here your code
-    pass
+    greater = 0
+    lesser = 0
+    if len(list_numbers) == 0:
+        raise ValueError
+    for number in list_numbers:
+        if type(number) is str:
+            raise TypeError
+        if number > greater:
+            greater = number
+        if number < lesser:
+            lesser = number
+    print(f"'Greater:' {greater}\n'Lesser: ' {lesser}")
+    return (lesser, greater)
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
