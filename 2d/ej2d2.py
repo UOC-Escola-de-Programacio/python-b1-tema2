@@ -3,7 +3,7 @@ Enunciado:
 Implementa la función 'calculate_max_and_min' que reciba como parámetro una
 lista de números 'list_numbers', se deben considerar los casos en los que los
 datos que se encuentran dentro de la lista sean de type string o que la lista
-se encuentre vacía. 
+se encuentre vacía.
 
 Adicionalmente, la función debe ir imprimiendo cual es el número menor y el
 número mayor según va avanzando en la lista siempre y cuando este sea distinto
@@ -15,7 +15,7 @@ Parámetros:
 list_numbers: Lista de números.
 
 Ejemplo:
-    Entrada: 
+    Entrada:
         [10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55]
     Salida:
         'Greater:' 200
@@ -67,13 +67,28 @@ Exemple:
 
 
 def calculate_max_and_min(list_numbers):
-    # Write here your code
+    try:
+        max = 0
+        for numero in list_numbers:
+            if max < numero:
+                max = numero
+
+        min = 0
+        for numero in list_numbers:
+            if min > numero:
+                min = numero
+        return f"Mayor : {max}\nMenor: {min}"
+
+    except TypeError:
+        raise TypeError("La llista ha de ser tota de numeros")
+    except ValueError:
+        raise ValueError("La llista no pot estar buida")
+
     pass
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# print(
-#     "\nResult: ", calculate_max_and_min([10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55])
-# )
+print("\nResult: ", calculate_max_and_min(
+    [10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55]))
