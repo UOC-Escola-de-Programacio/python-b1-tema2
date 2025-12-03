@@ -90,17 +90,45 @@ Exemple:
 
 
 def add_student_by_value(list_students, new_student):
-    # Write here your code
+    assert add_student_by_value(list_students, new_student) == [
+        "Alice",
+        "Bob",
+        "Juan",
+        "Maria",
+    ], "add student_by_value does not return the correct value for input ['Alice', 'Bob', 'Juan'], 'Maria'. It should be ['Alice', 'Bob', 'Juan', 'Maria']"
+    assert add_student_by_value(list_students, "Victor") == [
+        "Alice",
+        "Bob",
+        "Juan",
+        "Victor",
+    ], "add student_by_value does not return the correct value for input ['Alice', 'Bob', 'Juan'], 'Victor'. It should be ['Alice', 'Bob' 'Juan', 'Maria', 'Victor']"
     pass
 
 
 def add_student_by_reference(list_students, new_student):
-    # Write here your code
+    add_student_by_reference(list_students, new_student_by_reference)
+    assert list_student == ["Alice", "Bob", "Juan", "Sofia"], "add_student_by_reference does not return the correct value for input ['Alice', 'Bob', 'Juan'], 'Sofia'. It should be ['Alice', 'Bob', 'Juan', 'Sofia']"
+    add_student_by_reference(list_students, "Victor")
+    assert list_student == ["Alice", "Bob", "Juan", "Sofia", "Victor"], "add_student_by_reference does nor return the correct valur for input ['Alice', 'Bob', 'Juan', 'Sofia'] 'Victor'. It should be ['Alice', 'Bob', 'Juan', 'Sofia', 'Victor']
     pass
 
-
 def main(list_students, new_student_by_value, new_student_by_reference):
-    # Write here your code
+    assert main(list_students, new_students_by_value, new_students_by_reference) == [
+        "Alice",
+        "Bob",
+        "Juan",
+        "Sofia",
+        "Victor",
+        "Sofia",
+    ], "main does not return the correct value for input ['Alice', 'Bob', 'Juan'], 'Maria', 'Sofia'. It should be ['Alice', 'Bob', 'Juan', 'Sofia', 'Victor', 'Sofia']"  
+    assert main(list_students, new_students_by_value, "Carlos") == [
+        "Alice",
+        "Bob",
+        "Sofia",
+        "Victor",
+        "Sofia",
+        "Carlos",
+    ],  "main does not return the correct value for input ['Alice', 'Bob', 'Juan'], 'Maria', 'Carlos'. It should be ['Alice', 'Bob', 'Juan', 'Sofia', 'Victor', 'Sofia', 'Carlos']"
     pass
 
 
