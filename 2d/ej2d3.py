@@ -58,10 +58,18 @@ def division_list(list_numbers: List, number: int) -> List[float]:
             raise IndexError(f"Value {number_in_list} is not numeric.")
         result.append(number_in_list)
     return result
-
-
-list_numbers = [1.5, 2.5, "9.2", 0, 22]
-scalar_number = "4.0"
+    
+def test_division_list():
+    list_numbers = [1.5, 2.5, "9.2", 0, 22]
+    scalar_number = 7.1
+    with pytest.raises(TypeError):
+        division_list = (list_number, scalar_number)
+    list_numbers = [1, "a", 9, 0, 22]
+    scalar_number = 2
+    assert (
+            list_number ==
+            [0.21126760563380284, 0.35211267605633806, 1.295774647887324, 0.0, 3.098591549295775]
+    ), "division_list does not return the correct value for input [1.5, 2.5, 9.2, 0, 22] and 7.1. It should be [0.21126760563380284, 0.35211267605633806, 1.295774647887324, 0.0, 3.098591549295775]"
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
