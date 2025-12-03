@@ -55,8 +55,18 @@ Exemple:
 
 
 def get_element_from_list(items_list, index) -> str:
-    # Write here your code
-    pass
+    assert get_element_from_list([1, 2, 3], 0) == 1, "get_element_from_list does not return the correct value for input ([1, 2, 3], 0). It should be 1"
+    assert get_element_from_list([1, 2, 3], 1) == 2, "get_elemet_from_list does not return the correct value for input ([1, 2, 3], 1). It should be 2"
+    assert(
+       get_element_from_list([1, 2, 3], 3)
+        == "The specific index is out of the items_list_range"
+    ), "get_element_from_list does not return ([1, 2, 3], 3), is out of this list_items_range'"
+    assert (
+        get_element_from_list([], 0 )
+        == "The specific index is out of the items_list_range"
+    ), "get_element_from_list does not return ([], 0) is out of this list_items_range'"
+        assert get_element_from_list (5, 0).__contains__"An unexpected error has ocurred:", "get_element_from_list does not return the correct value for input (5, 0). It should contain 'An unexpected error has occurred:'"
+
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
