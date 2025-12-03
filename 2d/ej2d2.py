@@ -67,7 +67,14 @@ Exemple:
 
 
 def calculate_max_and_min(list_numbers):
-    # Write here your code
+    list_number = [10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.5]
+    result = calculate_max_min(list_numbers)
+    assert result == (-55.5, 200), "calculate_max_and_min does not return the correct value input for [10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.5]. It should be (-55.5, 200)"
+    
+    
+    salida_stdout, salida_stderr = capfd.readouterr()
+    assert salida_stdout.strip() != " ", "calculate_max_and_min does not print anything"
+    assert salida_stderr. strip() == " ", "calculate_max_and_min prints an error message"
     pass
 
 
