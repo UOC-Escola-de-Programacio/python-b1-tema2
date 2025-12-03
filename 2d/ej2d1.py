@@ -49,7 +49,11 @@ Exemple:
 
 
 def kg_to_lb(kg):
-    # Write here your code
+    assert kg_to_1b(1) == 2.20, "kg_to_1b does not return the correct value for input 1. It should be 2.20"
+with pytest raise (ValueError):
+     kg_to_1b(-1), "kg_to_1b does not raise the exception for input -1. It should raise a ValueError" 
+with pytest raise (Type Error):
+     kg-to_1b("abc"), "kg_to 1b does not raise the execption for input 'abc'. It should raise a TypeError"
     pass
 
 
