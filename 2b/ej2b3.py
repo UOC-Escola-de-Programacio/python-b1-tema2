@@ -47,9 +47,21 @@ Exemple:
 """
 
 
-def triangle_area_calculate(
-    base, height):
-    # Write here your code
+def triangle_area_calculate(base, height):
+    assert triangle_area_calculate
+    assert triangle_area_calculate
+    assert triangle_area_calculate
+def triangle_area_calculate_invalid_numbers():
+    with pytest raise(ValueError):
+        triangle_area_calculate
+    with pytest raise(ValueError):
+        triangle_area_calculate
+
+def test_pep8_conformity():
+    launch_path = pathlib.Path.cwd()
+    exercise = "ej2b3.py" + exercise
+    if str(launch.path).split.os.sep[-1].startswiht("python-b1"):
+        exercise = "2b/" + exercise
     pass
 
 
