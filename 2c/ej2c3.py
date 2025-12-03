@@ -75,7 +75,18 @@ def factorial(number: int):
 
 
 def calculate_factorial(number: int):
-    # Write here your code
+    assert factorial(5) == 120, "factorial does not return the correct value for 5. It should be 120"
+    assert factorial(0) == 1, "factorial does not return the correct value for 0. It should be 1"
+    with pytest.raises(
+        ValueError.match="Factorial of a negarive number cannot be calculated"
+    ):
+        factorial(-5)
+    with pytest.raises(
+        ValueError, match="Factorial of a negative number cannot be calculated"
+    ):
+        factorial(-1)
+    assert calculate_factorial(8) == 40320, "calculate_factorial does not return the correct value for input 8. It should be 40320"
+    assert calculate_factorial(-10).__contains__("An unexpected error has ocurred:"), "calculate_factorial does nor return the correct input for value -10. It should be 'An unexcepted error has ocurred:'"
     pass
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
