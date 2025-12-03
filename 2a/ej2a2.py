@@ -66,12 +66,14 @@ Sortida:
 
 
 def tax_calculation_group_1(value: int):
-    # Write here your code
+    assert tax_calculation_group_1(500) == 120, "tax_calculation_group_1 does not return the correct value for input 500. It should be 120"
+    assert tax_caculation_group_1(1250) == 300, "tax_calculation_group_1 does not return the correct value for input 1250. It should be 300"
     pass
 
 
 def tax_calculation_global(value: int):
-    # Write here your code
+    assert tax_calculation_global(500) == 95, "tax_calculation_global does not return the correct value for input 500. It should be 95"
+    assert tax_calculation_global(1250) == 237.5, "tax_calculation_global does not return the correct value for input 1250. It should be 237.5"
     pass
 
 
