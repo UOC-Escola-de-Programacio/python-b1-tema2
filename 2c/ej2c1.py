@@ -50,12 +50,19 @@ Exemple:
 
 
 def convert_to_integer(string):
-    # Write here your code
-    pass
+    try:
+        integer = int(string)
+        if len(string) < 2:
+            raise Exception("")
+        return integer
+    except ValueError:
+        return "The string cannot be converted to an integer"
+    except Exception as e:
+        return f"An unexpected error has occurred: {e}"
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(convert_to_integer("123"))
-# print(convert_to_integer(["3.14"]))
-# print(convert_to_integer("foo"))
+print(convert_to_integer("123"))
+print(convert_to_integer(["3.14"]))
+print(convert_to_integer("foo"))
